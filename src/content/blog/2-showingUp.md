@@ -3,6 +3,7 @@ title: 'Showing Up'
 description: 'Thoughts on the art of showing up'
 pubDate: 'Oct 17 2023'
 heroImage: '/blog-placeholder-3.jpg'
+isDraft: false
 ---
 
 When I think about the act of showing up, I think about the daily habit of brushing teeth.

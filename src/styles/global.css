@@ -5,7 +5,7 @@
  */
 
 :root {
-	--accent: #2337ff;
+	--accent: #E21818;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 40, 40, 43;
@@ -57,7 +57,6 @@ h5,
 h6 {
 	font-family: var(--header-font);
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--gray));
 	line-height: 1.2;
 	font-weight: 500;
 	font-style: normal;
@@ -81,15 +80,20 @@ h4 {
 h5 {
 	font-size: 1.25em;
 }
+.small-header {
+	font-size: var(	--size-l-1);
+}
 p {
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 }
 strong,
 b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	text-decoration: none;
+	color: rgb(var(--gray-dark));
+	transition: color 0.15s ease-in-out;
 }
 a:hover {
 	color: var(--accent);
@@ -177,4 +181,9 @@ hr {
 .grid-wrapper__3{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+}
+
+/* Utilities */
+.mb-2 {
+	margin-bottom: 0.5em;
 }

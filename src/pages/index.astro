@@ -5,7 +5,13 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog', ({ data }) => {
+	return data.isDraft !==true;
+})).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+
 ---
 
 <!doctype html>
@@ -22,29 +28,31 @@ const posts = await getCollection('blog');
 				<main>
 
 				<section class="home-hero">
-					<h1>Thanks for being curoius</h1>
+					<h1>Thanks for reading</h1>
 					<p>
-						My hope for this small space on the internet is to be a moment of inspiration, reflection, and curiosity.
+						This is a space I've set up to be vulnerable in an open domain. Sharing my thoughts on all things design and creativity
+						while trying to survive all the stresses in my life.
 					</p>
 					<p>
-						A lot of topics will vary but will dwindle around, design, creativity, freelancing, startups. 
+						It's kind of messy right now and work of progress, but that's the point.
 					</p>
-					<p>So if you're interested in that; I hope you stay a while and get cozy with these pixels.</p>
 				</section>
 		
 					<section class="post-list">
-						<h2>Recent thoughts</h2>
-						<h3>Ocotober</h3>
-						<ul>
-							{posts.map((post) => (
-								<li>
-									<a href={`/blog/${post.slug}`}>
-									<h4>{post.data.title}</h4>
-									</a>
-								</li>
-								))
-							}
-						</ul>
+						<h2 class="mb-2">Notes</h2>
+						<h3 class="small-header">Ocotober</h3>
+						<div class="post-list_collection">
+							<ul>
+								{posts.map((post) => (
+									<li>
+										<a href={`/blog/${post.slug}`}>
+										<h4>{post.data.title}</h4>
+										</a>
+									</li>
+									))
+								}
+							</ul>
+						</div>
 					</section>
 				</main>
 			</div>
