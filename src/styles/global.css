@@ -15,7 +15,7 @@
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 	--logo-font: fit-condensed, lucida, sans-serif;
-	--body-font: forma-djr-micro, sans-serif;
+	--body-font: trade-gothic-next, sans-serif;
 	--header-font: fairplex-narrow, serif;
 	--header-transform: lowercase;
 
@@ -83,8 +83,11 @@ h5 {
 .small-header {
 	font-size: var(	--size-l-1);
 }
+.small-text {
+	font-size: 0.9rem;
+}
 p {
-	font-size: 1.25rem;
+	font-size: 1rem;
 }
 strong,
 b {
