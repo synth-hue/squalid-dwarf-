@@ -148,6 +148,8 @@ hr {
 	border-top: 1px solid rgb(var(--gray-light));
 }
 
+
+/* Media Queries */
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
@@ -155,6 +157,22 @@ hr {
 	main {
 		padding: 1em;
 		grid-column: 1 / 4; 
+	}
+
+	h1 {
+		font-size: var(	--size-l-3);
+	}
+
+	h2 {
+		font-size: var(	--size-l-2);	
+	}
+
+	h3 {
+		font-size: var(	--size-l-1);		
+	}
+
+	h4 {
+		font-size: 1.125rem;
 	}
 }
 
